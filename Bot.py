@@ -25,5 +25,8 @@ async def _8ball(ctx, *, question):
     ]
     await ctx.send(f'Question: {question}\nAnswer: {random.choice(response)}')
 
+@client.command()
+async def clear(ctx, amount=5):
+    await ctx.channel.purge(limit=amount)
 
 client.run(config.bot_token)
